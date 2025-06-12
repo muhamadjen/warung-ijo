@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Ijo - Masakan Sunda</title>
+    <title>Karena rasa sejati selalu dimulai dari rumah.</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: url('./public/Nasirames.jpeg') center/cover no-repeat;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            color: white;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        nav.scrolled {
+            background: #0de664;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /*  */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /*  */
+
+        /* #menu .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .menu-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px; */
+        /* } */
+
+        .menu-item h3 {
+            margin-top: 15px;
+            color: #2e7d32;
+            font-size: 1.25rem;
+        }
+
+        .menu-item p {
+            color: #555;
+        }
+
+        footer {
+            background: #222;
+            color: #eee;
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div style="color:white; font-weight:bold; font-size:1.2rem;">Warung Ijo</div>
+        <div>
+            <a href="#menu">Menu</a>
+            <a href="#about">Tentang</a>
+            <a href="#contact">Kontak</a>
+        </div>
+    </nav>
+    <header>
+        <div class="hero-content">
+            <h1>Rumah Makan "Warung Ijo"</h1>
+            <p>Karena rasa sejati selalu dimulai dari rumah.</p>
+        </div>
+    </header>
+    <section id="menu">
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:40px;">Menu Andalan</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="./public/nasicampur.jpg" alt="Nasi Rames">
+                <h3>Nasi Rames Komplit</h3>
+                <p>Ayam goreng, tahu, tempe, sambal, lalapan segar.</p>
+            </div>
+            <div class="menu-item">
+                <img src="./public/sopiga.jpeg" alt="Sop Iga">
+                <h3>Sop Iga</h3>
+                <p>Kuah bening yang gurih, kaya rempah, serta potongan iga yang empuk</p>
+            </div>
+            <div class="menu-item">
+                <img src="./public/jengkol.jpg" alt="jengkol balado">
+                <h3>Jengkol Balado</h3>
+                <p>Jengkol yang empuk namun kenyal, dengan aroma yang sudah dikurangi melalui perendaman dan perebusan.
+                </p>
+            </div>
+            <div class="menu-item">
+                <img src="./public/tumispare.jpg" alt="Tumis Pare">
+                <h3>Tumis Pare</h3>
+                <p>Perpaduan pahit khas pare dengan gurih dan sedikit pedas dari bumbu.</p>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;">Tentang Warung Ijo</h2>
+        <p style="max-width:800px; margin:auto; text-align:center;">Di balik setiap sajian kami, tersimpan cerita hangat
+            dari dapur orang tua. Rumah makan "Warung Ijo" lahir dari kerinduan akan cita rasa asli yang otentik — rasa
+            yang dulu hadir di meja makan rumah, kini kami hadirkan kembali untuk Anda.</p>
+    </section>
+    <section id="contact">
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;">Kontak & Lokasi</h2>
+        <p style="text-align:center;">📍 Blok Anan Jl. Buaran raya No.32, Buaran, Serpong Sub-District, South Tangerang City, Banten 15310</p>
+        <p style="text-align:center;">📞 0812-3456-7890 | 📧 info@warungijo.com</p>
+        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;"> </h2>
+        <div style="text-align: center;">
+            <img src="./public/warung3.png" alt="Warung">
+        </div>
+
+    </section>
+    <footer>
+        &copy; 2025 Warung Ijo. All rights reserved.
+    </footer>
+    <script>
+        window.addEventListener('scroll', function () {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+
+</html>
