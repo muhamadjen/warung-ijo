@@ -1,197 +1,443 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warung Ijo - Masakan Sunda</title>
-    <title>Karena rasa sejati selalu dimulai dari rumah.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
         body {
-            color: #333;
-            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
         }
 
-        header {
-            background: url('./public/Nasirames.jpeg') center/cover no-repeat;
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600494603989-9650e6e5f0f1?ixlib=rb-4.0.3&ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
         }
 
-        header::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
         }
 
-        .hero-content {
-            position: relative;
-            color: white;
-            z-index: 1;
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('./public/nasicampur.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-            transition: background 0.3s;
-        }
-
-        nav.scrolled {
-            background: #0de664;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /*  */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .menu-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        /*  */
-
-        /* #menu .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .menu-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px; */
-        /* } */
-
-        .menu-item h3 {
-            margin-top: 15px;
-            color: #2e7d32;
-            font-size: 1.25rem;
-        }
-
-        .menu-item p {
-            color: #555;
-        }
-
-        footer {
-            background: #222;
-            color: #eee;
-            text-align: center;
-            padding: 30px;
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 
-<body>
-    <nav id="navbar">
-        <div style="color:white; font-weight:bold; font-size:1.2rem;">Warung Ijo</div>
-        <div>
-            <a href="#menu">Menu</a>
-            <a href="#about">Tentang</a>
-            <a href="#contact">Kontak</a>
-        </div>
-    </nav>
-    <header>
-        <div class="hero-content">
-            <h1>Rumah Makan "Warung Ijo"</h1>
-            <p>Karena rasa sejati selalu dimulai dari rumah.</p>
-        </div>
-    </header>
-    <section id="menu">
-        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:40px;">Menu Andalan</h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="./public/nasicampur.jpg" alt="Nasi Rames">
-                <h3>Nasi Rames Komplit</h3>
-                <p>Ayam goreng, tahu, tempe, sambal, lalapan segar.</p>
-            </div>
-            <div class="menu-item">
-                <img src="./public/sopiga.jpeg" alt="Sop Iga">
-                <h3>Sop Iga</h3>
-                <p>Kuah bening yang gurih, kaya rempah, serta potongan iga yang empuk</p>
-            </div>
-            <div class="menu-item">
-                <img src="./public/jengkol.jpg" alt="jengkol balado">
-                <h3>Jengkol Balado</h3>
-                <p>Jengkol yang empuk namun kenyal, dengan aroma yang sudah dikurangi melalui perendaman dan perebusan.
-                </p>
-            </div>
-            <div class="menu-item">
-                <img src="./public/tumispare.jpg" alt="Tumis Pare">
-                <h3>Tumis Pare</h3>
-                <p>Perpaduan pahit khas pare dengan gurih dan sedikit pedas dari bumbu.</p>
-            </div>
-        </div>
-    </section>
-    <section id="about">
-        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;">Tentang Warung Ijo</h2>
-        <p style="max-width:800px; margin:auto; text-align:center;">Di balik setiap sajian kami, tersimpan cerita hangat
-            dari dapur orang tua. Rumah makan "Warung Ijo" lahir dari kerinduan akan cita rasa asli yang otentik — rasa
-            yang dulu hadir di meja makan rumah, kini kami hadirkan kembali untuk Anda.</p>
-    </section>
-    <section id="contact">
-        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;">Kontak & Lokasi</h2>
-        <p style="text-align:center;">📍 Blok Anan Jl. Buaran raya No.32, Buaran, Serpong Sub-District, South Tangerang City, Banten 15310</p>
-        <p style="text-align:center;">📞 0812-3456-7890 | 📧 info@warungijo.com</p>
-        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;"> </h2>
-        <div style="text-align: center;">
-            <img src="./public/warung3.png" alt="Warung">
-        </div>
+<!-- jen -->
 
-    </section>
-    <footer>
-        &copy; 2025 Warung Ijo. All rights reserved.
-    </footer>
-    <script>
-        window.addEventListener('scroll', function () {
-            const nav = document.getElementById('navbar');
-            nav.classList.toggle('scrolled', window.scrollY > 50);
-        });
-    </script>
-</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Ijo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- end jen -->
+
+    <body class="bg-gray-50 text-gray-800">
+        <!-- Header/Navigation -->
+        <header class="sticky top-0 z-50 bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex justify-between items-center">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-green-400 flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-utensils text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-800">Rumah Makan "Warung Ijo"</h1>
+                            <p class="text-xs text-gray-500">Jl. Buaran raya, Buaran, Kec. Serpong, Kota Tangerang
+                                Selatan, Banten 15310</p>
+                        </div>
+                    </div>
+
+                    <!-- Menu Desktop -->
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#home" class="text-gray-800 hover:text-green-500 font-medium transition">Beranda</a>
+                        <a href="#profile" class="text-gray-800 hover:text-green-500 font-medium transition">Profil</a>
+                        <a href="#layanan" class="text-gray-800 hover:text-green-500 font-medium transition">Menu
+                            Pilihan</a>
+                        <a href="#contact" class="text-gray-800 hover:text-green-500 font-medium transition">Kontak</a>
+                    </nav>
+
+                    <!-- Hamburger Menu (Mobile) -->
+                    <button id="menu-toggle" class="md:hidden text-gray-800">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Menu Mobile -->
+                <div id="mobile-menu" class="md:hidden hidden flex-col mt-4 space-y-2">
+                    <a href="#home" class="block py-2 px-4 text-gray-800 hover:text-green-500 font-medium">Beranda</a>
+                    <a href="#profile" class="block py-2 px-4 text-gray-800 hover:text-green-500 font-medium">Profil</a>
+                    <a href="#layanan" class="block py-2 px-4 text-gray-800 hover:text-green-500 font-medium">Menu
+                        Pilihan</a>
+                    <a href="#contact" class="block py-2 px-4 text-gray-800 hover:text-green-500 font-medium">Kontak</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- jen -->
+        <!-- Script untuk toggle menu dan auto-hide saat diklik -->
+        <script>
+            const toggleBtn = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            toggleBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Tutup menu setelah klik salah satu link (untuk mobile)
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        </script>
+        <!-- end jen -->
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg min-h-[60vh] flex items-center text-white">
+            <div class="container mx-auto px-4 py-20">
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Selamat datang di</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Rumah Makan</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-emerald-600">"Warung Ijo"</h1>
+
+                    <p class="text-lg md:text-xl mb-6">"Lauknya Ganti-Ganti, Tapi Enaknya Konsisten Tiap Hari!"</p>
+
+
+                    <!-- <div class="flex flex-wrap gap-4">
+                        <a href="#contact"
+                            class="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg text-white font-medium transition">Daftar
+                            Sekarang</a>
+                        <a href="#program"
+                            class="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg text-white font-medium transition">Lihat
+                            Program</a>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Profile</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="./public/Nasirames.jpeg" alt="gbass" class="rounded-lg shadow-lg w-full h-auto">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Rumah Makan "Warung Ijo"</h3>
+                        <p class="text-gray-600 mb-4">Selamat datang di Rumah Makan Tradisional — Tempat Rasa dan Rindu
+                            Bertemu.</p>
+                        <p class="text-gray-600 mb-4">Di tengah kesibukan dunia modern, kami hadir untuk menghadirkan
+                            kembali kenikmatan cita rasa nusantara yang hangat dan otentik. Rumah Makan Tradisional
+                            bukan sekadar tempat makan, tapi ruang penuh kenangan di mana setiap sajian menyimpan cerita
+                            – tentang dapur nenek, tentang kampung halaman, tentang hangatnya makan bersama.
+                            Didirikan dengan semangat melestarikan masakan khas Indonesia, kami menggunakan bahan segar
+                            pilihan, bumbu asli rempah-rempah, dan teknik masak tradisional yang diwariskan
+                            turun-temurun."</p>
+                        <div class="flex flex-wrap gap-4 mt-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Sayur Asem dan Ikan Asin.</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Nasi Rames Komplit</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span>Sop Iga</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Section -->
+        <section id="layanan" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Menu Pilihan</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Program 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="./public/tumispare.jpg" alt="Pemasangan Head Unit"
+                                class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Tumis Pare</h3>
+                            <p class="text-gray-600 mb-4">Perpaduan pahit khas pare dengan gurih dan sedikit pedas dari
+                                bumbu.</p>
+                            <!-- <a href="#" class="text-green-500 font-medium inline-flex items-center hover:underline">
+                                Selengkapnya <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <!-- Program 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="./public/sopiga.jpeg" alt="Pemasangan Amplifier dan Parametric Equalizer"
+                                class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Sop Iga</h3>
+                            <p class="text-gray-600 mb-4">Kuah bening yang gurih, kaya rempah, serta potongan iga yang
+                                empuk</p>
+                            <!-- <a href="#" class="text-green-500 font-medium inline-flex items-center hover:underline">
+                                Selengkapnya <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <!-- Program 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="./public/jengkol.jpg" alt="Pemasangan Power & Speaker Audio Bus"
+                                class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Jengkol Balado</h3>
+                            <p class="text-gray-600 mb-4">Jengkol yang empuk namun kenyal, dengan aroma yang sudah
+                                dikurangi melalui perendaman dan perebusan..</p>
+                            <!-- <a href="#" class="text-green-500 font-medium inline-flex items-center hover:underline">
+                                Selengkapnya <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+                    <div class="w-20 h-1 bg-green-500 mx-auto"></div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Informasi Kontak</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-map-marker-alt text-green-500"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Alamat</h4>
+                                        <p class="text-gray-600">Jalan Buaran BSD, Tangerang Selatan</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone-alt text-green-500"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Telepon</h4>
+                                        <p class="text-gray-600">(021) 123-456-789</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-envelope text-green-500"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Email</h4>
+                                        <p class="text-gray-600">warungijo@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-clock text-green-500"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Jam Operasional</h4>
+                                        <p class="text-gray-600">Senin-Jum'at: 09.30 - 15.00 WIB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2">
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Formulir Kontak</h3>
+                            <form>
+                                <div class="mb-4">
+                                    <label for="name" class="block text-gray-700 mb-2">Nama Lengkap</label>
+                                    <input type="text" id="name"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" id="email"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="phone" class="block text-gray-700 mb-2">Nomor Telepon</label>
+                                    <input type="tel" id="phone"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="message" class="block text-gray-700 mb-2">Pesan</label>
+                                    <textarea id="message" rows="4"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                                </div>
+                                <button type="submit"
+                                    class="w-full py-3 bg-green-500 hover:bg-green-600 rounded-lg text-white font-medium transition">Kirim
+                                    Pesan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-utensils text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Rumah Makan "Warung Ijo"</h3>
+                        </div>
+                        <p class="text-gray-400 max-w-xs">“Masuk Warung Ijo Gak Pernah Keluar Lapar!”</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#home" class="text-gray-400 hover:text-green-400 transition">Beranda</a>
+                                </li>
+                                <li><a href="#profile" class="text-gray-400 hover:text-green-400 transition">Profil</a>
+                                </li>
+                                <li><a href="#layanan" class="text-gray-400 hover:text-green-400 transition">Menu
+                                        Pilihan</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- <div>
+                            <h4 class="text-lg font-semibold mb-4">Informasi</h4>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="text-gray-400 hover:text-green-400 transition">Syarat
+                                        Pendaftaran</a>
+                                </li>
+                                <li><a href="#" class="text-gray-400 hover:text-green-400 transition">Biaya
+                                        Pendidikan</a>
+                                </li>
+                                <li><a href="#" class="text-gray-400 hover:text-green-400 transition">Kalender
+                                        Akademik</a>
+                                </li>
+                                <li><a href="#" class="text-gray-400 hover:text-green-400 transition">Berita Terbaru</a>
+                                </li>
+                            </ul>
+                        </div> -->
+
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Sosial Media</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-green-500 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-green-500 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white hover:bg-green-500 transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                    <p>&copy; 2025 Project</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Theme switcher
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+
+            themeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
 
 </html>
